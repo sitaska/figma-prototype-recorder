@@ -1,9 +1,10 @@
 {
   "name": "Figma Prototype Recorder",
-  "id": "figma-prototype-recorder.dev",
+  "id": "1625567138942958485",
   "api": "1.0.0",
   "main": "dist/code.js",
   "ui": "dist/ui/index.html",
+  "documentAccess": "dynamic-page",
   "editorType": ["figma"],
   "networkAccess": {
     "allowedDomains": ["https://unpkg.com"]
