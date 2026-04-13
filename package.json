@@ -1,0 +1,17 @@
+{
+  "name": "figma-prototype-recorder",
+  "version": "0.1.0",
+  "description": "Plugin de Figma para grabar prototipos animados",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "clean": "node scripts/clean.mjs",
+    "build": "node scripts/build.mjs",
+    "recorder:web": "node scripts/serve-recorder-web.mjs",
+    "zip": "node scripts/zip.mjs",
+    "dist": "npm run clean && npm run build && npm run zip"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

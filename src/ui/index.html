@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Figma Prototype Recorder</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="hero">
+        <h1>Prototype Recorder</h1>
+        <p>Graba la reproduccion de tu prototipo y exporta el resultado en segundos.</p>
+      </header>
+
+      <section class="panel status-panel">
+        <div class="status-dot" id="statusDot" aria-hidden="true"></div>
+        <div>
+          <strong id="statusTitle">Listo para grabar</strong>
+          <p id="statusText">Presiona iniciar para seleccionar pantalla, ventana o pestaña.</p>
+        </div>
+      </section>
+
+      <section class="panel controls">
+        <label class="field" for="formatSelect">
+          <span>Formato de salida</span>
+          <select id="formatSelect">
+            <option value="webm" selected>WebM (rapido)</option>
+            <option value="mp4">MP4 (FFmpeg, mas lento)</option>
+          </select>
+        </label>
+        <button id="startBtn" class="btn btn-primary">Iniciar grabacion</button>
+        <button id="stopBtn" class="btn btn-danger" disabled>Detener grabacion</button>
+        <button id="externalBtn" class="btn btn-secondary" hidden>Abrir grabador en navegador</button>
+      </section>
+
+      <section class="panel output" id="outputPanel" hidden>
+        <h2>Previsualizacion</h2>
+        <video id="preview" controls playsinline></video>
+        <button id="downloadBtn" class="btn btn-secondary" disabled>Descargar video</button>
+      </section>
+
+      <footer class="footer">
+        <small>WebM es nativo. MP4 usa FFmpeg.wasm y puede tardar.</small>
+      </footer>
+    </main>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

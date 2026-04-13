@@ -1,0 +1,184 @@
+:root {
+  --bg: #f5f8f7;
+  --surface: #ffffff;
+  --ink: #17211e;
+  --muted: #5a6a64;
+  --primary: #0b7a58;
+  --primary-strong: #065e43;
+  --danger: #b03035;
+  --danger-strong: #8f2328;
+  --ring: #91dac3;
+  --shadow: 0 12px 28px rgba(7, 38, 30, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top left, #e4f8f0 0%, #f5f8f7 48%, #edf4f2 100%);
+  color: var(--ink);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.app {
+  display: grid;
+  gap: 14px;
+  padding: 16px;
+}
+
+.hero h1 {
+  margin: 0 0 6px;
+  font-size: 1.35rem;
+}
+
+.hero p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.panel {
+  background: var(--surface);
+  border: 1px solid #dbe6e2;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  padding: 12px;
+}
+
+.status-panel {
+  display: flex;
+  gap: 10px;
+  align-items: start;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #8ca099;
+  margin-top: 5px;
+}
+
+.status-dot.recording {
+  background: #cf2034;
+  box-shadow: 0 0 0 5px rgba(207, 32, 52, 0.2);
+  animation: pulse 1.2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 1;
+  }
+  70% {
+    transform: scale(1);
+    opacity: 0.65;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 1;
+  }
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.field {
+  grid-column: 1 / -1;
+  display: grid;
+  gap: 6px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.field select {
+  width: 100%;
+  border: 1px solid #c8d9d4;
+  border-radius: 8px;
+  background: #fff;
+  color: var(--ink);
+  padding: 8px 10px;
+  font-weight: 600;
+}
+
+.field select:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+.btn {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 120ms ease, filter 120ms ease;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+.btn:hover:enabled {
+  transform: translateY(-1px);
+  filter: brightness(0.98);
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+}
+
+.btn-primary:hover:enabled {
+  background: var(--primary-strong);
+}
+
+.btn-danger {
+  background: var(--danger);
+  color: #fff;
+}
+
+.btn-danger:hover:enabled {
+  background: var(--danger-strong);
+}
+
+.btn-secondary {
+  margin-top: 10px;
+  width: 100%;
+  background: #1c2d29;
+  color: #fff;
+}
+
+.controls .btn-secondary {
+  grid-column: 1 / -1;
+  margin-top: 0;
+}
+
+.output h2 {
+  margin: 0 0 10px;
+  font-size: 1rem;
+}
+
+video {
+  width: 100%;
+  max-height: 220px;
+  background: #e5edeb;
+  border-radius: 8px;
+}
+
+.footer {
+  text-align: center;
+  color: var(--muted);
+}

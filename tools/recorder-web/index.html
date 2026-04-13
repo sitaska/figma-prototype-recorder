@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recorder Web</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="wrap">
+      <h1>Recorder Externo para Figma Desktop</h1>
+      <p>Este modo captura la ventana de Figma cuando el plugin no puede usar getDisplayMedia.</p>
+
+      <div class="actions">
+        <button id="startBtn">Iniciar grabacion</button>
+        <button id="stopBtn" disabled>Detener grabacion</button>
+      </div>
+
+      <p id="status">Listo para grabar.</p>
+      <div class="preview-wrap" id="previewWrap">
+        <video id="preview" controls playsinline></video>
+        <div id="cropOverlay" hidden></div>
+      </div>
+
+      <div class="actions secondary">
+        <button id="cropModeBtn" disabled>Seleccionar area de prototipo</button>
+        <button id="downloadCropBtn" disabled>Descargar recorte WebM</button>
+      </div>
+
+      <button id="downloadBtn" disabled>Descargar WebM completo</button>
+
+      <section class="export-box">
+        <h2>Exportacion final</h2>
+
+        <label class="field" for="sourceSelect">
+          <span>Fuente del video</span>
+          <select id="sourceSelect" disabled>
+            <option value="full" selected>Grabacion completa</option>
+            <option value="crop">Area de prototipo recortada</option>
+          </select>
+        </label>
+
+        <label class="field" for="outputModeSelect">
+          <span>Modo de salida</span>
+          <select id="outputModeSelect" disabled>
+            <option value="raw" selected>Solo grabacion</option>
+            <option value="mockup">Con mockup de dispositivo</option>
+          </select>
+        </label>
+
+        <label class="field" for="deviceSelect">
+          <span>Dispositivo</span>
+          <select id="deviceSelect" disabled>
+            <option value="auto" selected>Auto (segun captura)</option>
+            <option value="iphone">iPhone (marco fino)</option>
+            <option value="pixel">Android (marco redondeado)</option>
+            <option value="tablet">Tablet</option>
+          </select>
+        </label>
+
+        <button id="downloadExportBtn" disabled>Descargar exportacion</button>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
