@@ -1,6 +1,6 @@
 figma.showUI(__html__, { width: 380, height: 560 });
 
-const EXTERNAL_RECORDER_URL = "https://figma-prototype-recorder.vercel.app";
+const EXTERNAL_RECORDER_URL = "https://figma-prototype-recorder.vercel.app/";
 
 figma.ui.onmessage = (msg) => {
   if (!msg || typeof msg !== "object") {
